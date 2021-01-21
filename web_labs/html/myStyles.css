@@ -1,0 +1,47 @@
+header{
+	height:80px; 
+	background-color:#C0405D;
+	color:white;
+	text-align: center;}
+
+nav{
+	background-color: #E5B8B7;
+	color:white;
+	height: 50px;
+	border-top-color: white;
+	border-color:#E5B8B7;
+	border-style: solid;
+	text-align:center;
+	line-height: 50px;}
+
+aside{
+	background-color: #E5B8B7;
+	color:white;
+	width:150px;
+	border-right-color: white;
+	border-top-color: white;
+	border-style: solid;
+	border-bottom-color:#C0405D;
+	text-align:center;
+	line-height: 50px;
+	float: left;
+	height:300px;}
+
+main {
+	background-color: #F2DBDB;
+	border-top-style: solid;
+	border-top-color: white;
+	height:300px;
+	padding-left:175px}
+
+footer{
+	height: 100px;
+	text-align: center;
+	background-color:#C0405D;
+	line-height: 180px;
+	margin-left: auto;
+	margin-right: auto}
+
+.footerLogo{
+	width: 88px;
+	height:88px;}

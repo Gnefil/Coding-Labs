@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>My awesome calculator</title>
+	<style type="text/css">
+		body{
+			background-color: #fcf2d7;
+		}
+
+		button{
+			text-decoration: none;
+			background-color: #d9d8d7;
+			border-radius: 28px;
+			border:3px outset white;
+			display: inline-flex;
+			cursor: -webkit-grab; cursor: grab;
+			color: #574a3e;
+			font-family: Palatino Linotype;
+			font-size: 20px;
+			padding: 5px 15px;
+			text-shadow: 0px 0px #0a0705;
+			width: 50px;
+			height: 50px;
+			text-align: justify;
+			line-height: 30px;
+			margin-right: auto;
+			align-content: center;
+			
+		}
+
+		button:hover{
+			background-color: #e3af07;
+			border:hidden;
+		}
+
+		input{
+			background-color: #f7f1df;
+			border: inset ;
+			text-align: center;
+			width: 180px;
+			height: 40px;
+		}
+
+		body{
+			text-align: center;
+			border:dashed white;
+		}
+	</style>
+	<script type="text/javascript">
+		/*var username = prompt("May I have your name?");
+		alert("Glad to see you, " + username + ", hope you will have a great experience!");*/
+		document.write("<input type='text' id='theDisplay'><br>");
+		numbers = ["7", "8", "9", "4", "5", "6", "1", "2", "3", ".", "0", "="];
+		ops = ["+", "-", "*", "/"];
+		let doReplace = 0;
+		for (var i = 0; i < numbers.length; i++)
+		{
+			if (numbers[i] == "=")
+			{
+				document.write("<button onclick='doCalc(&quot;"+numbers[i]+"&quot;)'>"+numbers[i]+"</button>");
+			}
+			else
+			{
+				document.write("<button onclick='updateDisplay(&quot;"+numbers[i]+"&quot;)'>"+numbers[i]+"</button>");
+			}
+			if (i%3 == 2)
+			{
+				op = ops.pop();
+				document.write("<button onclick='doCalc(&quot;"+ op +"&quot;)'>"+op+"</button>");
+				document.write("<br>");
+			}
+		
+		}
+		document.write("<input type='text' id='preValue' value='0'><br>");
+		document.write("<input type='text' id='preOp' value='+'><br>");
+
+		function updateDisplay(num)
+		{
+			curVal = document.getElementById('theDisplay').value;
+			curVal += num;
+			document.getElementById('theDisplay').value = curVal;
+		}
+
+		function doCalc (op)
+		{	
+			preValue = Number(document.getElementById('preValue').value);
+			preOp = document.getElementById('preOp').value;
+			curValue = Number(document.getElementById('theDisplay').value);
+
+			if (preOp == "+")
+			{
+				newValue = preValue + curValue;
+			}
+			if (preOp == "-")
+			{
+				newValue = preValue - curValue;
+			}
+			if (preOp == "*")
+			{
+				newValue = preValue * curValue;
+			}
+			if (preOp == "/")
+			{
+				newValue = preValue / curValue;
+			}
+
+			document.getElementById('theDisplay').value = "";
+			document.getElementById('preOp').value = op;
+			document.getElementById('preValue').value = newValue;
+
+			if (op == "=")
+			{
+				document.getElementById('theDisplay').value = newValue;
+			}
+
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

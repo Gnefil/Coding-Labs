@@ -1,0 +1,78 @@
+<!-- My First Webpage -->
+<!DOCTYPE html>
+<!--This shows the language that the webpage is set to-->
+<html lang="en">
+	<head>
+		<link rel="stylesheet"  type="text/css" href="myStyles.css">
+		<script type="text/javascript">
+			 function updateDays() {
+			 alert ("It works!");
+			 today = new Date();
+			 for (i=0; i<3; i++){
+			 	submission = document.getElementById("date[" + i +"]").innerHTML;
+			 	dd = submission.substring(0,2);
+				mm = submission.substring(3,5);
+				yyyy = submission.substring(6,10);
+				submissionDate = new Date(mm + "/" + dd + "/" + yyyy);
+				diffTime = Math.abs(submissionDate.getTime() - today.getTime());
+				diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+				if (submissionDate.getTime() >= today.getTime())
+ 					days = " days";
+				else
+					days = " days overdue";
+				document.getElementById("dueDays[" + i + "]").innerHTML = diffDays + days
+			}
+
+			 }
+		 </script>
+		<!--This shows the encoding that the webpage uses-->
+		<meta charset="UTF-8">
+ 		<title>My Submission Dates</title>
+ 	</head>
+ 	<body style="background-color:white;">
+ 		<header>
+	 		<h1 style="line-height: 80px;">ABOUT MY COURSES</h1>
+	 	</header>
+	 	<nav>
+	 		<a href="submissionDates.html">Submission Dates</a>|
+		 	<a href="courseTutors.html">Course Tutors</a>|
+		 	<a href="classTimes.html">Class Times</a>
+	 	</nav>
+	 	<aside>
+	 		<a href="comp10120.html">COMP10120</a><br>
+	 		<a href="comp10140.html">COMP10140</a><br>
+	 		<a href="comp10150.html">COMP10150</a><br>
+	 	</aside>
+	 	<main>
+	 		<h1>Submission Dates</h1>
+	 		<p>Information about submission dates will appear here.</p>
+	 		<table border = "6">
+	 			<tr>
+	 				<th>Work Due</th><th>Due Date</th><th>Due in</th>
+	 			</tr>
+	 			<tr>
+	 				<td>10120 Lab (show to Yifan TA(*^▽^*))</td>
+	 				<td id ="date[0]">30/10/2020</td>
+	 				<td id ="dueDays[0]">unknown</td>
+	 			</tr>
+	 			<tr>
+	 				<td>16321 Course work 1</td>
+	 				<td id ="date[1]">06/11/2020</td>
+	 				<td id ="dueDays[1]">unknown</td>
+	 			</tr>
+	 			<tr>
+	 				<td>15111 Lab 2</td>
+	 				<td id ="date[2]">08/11/2020</td>
+	 				<td id ="dueDays[2]">unknown</td>
+	 			</tr>
+	 		</table>
+	 		<button onclick="updateDays()">Update Due Days</button>
+	 	</main>
+	 	<footer>
+	 		<img src="twitter.png" alt="twitter logo" class="footerLogo">
+	 		<img src="facebook.png.png" alt="facebook logo" class="footerLogo">
+	 		<img src="instagram.png" alt="instagram logo" class="footerLogo">
+	 		<img src="g+.png" alt="g+ logo" class="footerLogo">
+	 	</footer>
+ 	</body>
+</html>

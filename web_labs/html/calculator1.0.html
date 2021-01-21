@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My awesome calculator</title>
+	<script type="text/javascript">
+		var username = prompt("May I have your name?");
+		alert("Glad to see you, " + username + ", hope you will have a great experience!");
+		function calculate(op)
+		{
+			var num1 = document.getElementById("num1").value;
+			var num2 = document.getElementById("num2").value;
+			if (op == "+")
+				var answ = Number(num1) + Number(num2);
+			if (op == "-")
+				var answ = Number(num1) - Number(num2);
+			if (op == "*")
+				var answ = Number(num1) * Number(num2);
+			if (op == "/")
+				var answ = Number(num1) / Number(num2);
+			document.getElementById("result").innerHTML = answ
+		}
+	</script>
+</head>
+<body>
+	Enter a number 1<input type="text" id="num1"><br>
+	Enter a number 2<input type="text" id="num2"><br>
+	<button onclick="calculate(&quot+&quot)">Add</button>
+	<button onclick="calculate(&quot-&quot)">Subtract</button>
+	<button onclick="calculate(&quot*&quot)">Multiply</button>
+	<button onclick="calculate(&quot/&quot)">Divede</button>
+	<p id="result"></p>
+</body>
+</html>
